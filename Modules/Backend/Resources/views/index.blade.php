@@ -1,9 +1,21 @@
 @extends('backend::layouts.master')
 
 @section('content')
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('backend.name') !!}
-    </p>
+    <form class="form-signin">
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputEmail">Email address</label>
+        </div>
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Password</label>
+        </div>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
 @stop
