@@ -49,7 +49,8 @@ class BackendServiceProvider extends ServiceProvider
             __DIR__.'/../Config/config.php' => config_path('backend.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'backend'
+            __DIR__.'/../Config/config.php',
+            'backend'
         );
     }
 
@@ -66,7 +67,7 @@ class BackendServiceProvider extends ServiceProvider
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/backend';
