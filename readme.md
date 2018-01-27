@@ -15,3 +15,5 @@ php artisan migrate
 php artisan db:seed
 
 php artisan module:seed 
+
+admin@admin.com e senha: 12345678
