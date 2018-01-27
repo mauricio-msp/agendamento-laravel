@@ -72,6 +72,10 @@ class BackendServiceProvider extends ServiceProvider
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/backend';
         }, \Config::get('view.paths')), [$sourcePath]), 'backend');
+
+        $this->loadViewsFrom(array_merge(array_map(function ($path) {
+            return $path . '/modules/backend/auth';
+        }, \Config::get('view.paths')), [$sourcePath]), 'Auth');
     }
 
     /**

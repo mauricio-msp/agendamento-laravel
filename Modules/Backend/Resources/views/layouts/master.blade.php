@@ -10,7 +10,7 @@
     <link href="{{url('assets/css/app.css')}}" rel="stylesheet">
 </head>
 <body>
-    @yield('content')
+@yield('content')
 <script type="text/javascript" src="{{url('assets/js/jquery-3.2.1.slim.min.js')}}"></script>
 <script type="text/javascript" src="{{url('assets/js/app.js')}}"></script>
 </body>

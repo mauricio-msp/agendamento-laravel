@@ -1,21 +1,33 @@
 @extends('backend::layouts.master')
 
 @section('content')
-    <form class="form-signin">
-        <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputEmail">Email address</label>
+    <div class="container">
+        <div class="row">
+            <a href="{{ route('admin.logout') }}"
+               onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                Sair
+            </a>
+            <form id="logout-form" action="{{ route('admin.login') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </div>
-        <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <label for="inputPassword">Password</label>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Dashboard</div>
+
+                    <div class="panel-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        <h1>You are logged in!</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
-    </form>
+    </div>
 @stop

@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Backend\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
 
-class BackendController extends Controller
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,7 +13,7 @@ class BackendController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,6 @@ class BackendController extends Controller
      */
     public function index()
     {
-        return view('backend::index');
+        return view('home');
     }
 }
