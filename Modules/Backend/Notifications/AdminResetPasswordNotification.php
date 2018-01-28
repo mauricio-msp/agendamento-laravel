@@ -41,9 +41,11 @@ class AdminResetPasswordNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Reset Password', route('admin.password.reset', $this->token))
-                    ->line('Thank you for using our application!');
+            ->line('Você solicitou uma redefinição de senha.')
+            ->action('Redefinir Senha', route('admin.password.reset', $this->token))
+            ->line('Obrigado por usar nosso aplicativo!')
+            ->line('Se você não solicitou uma redefinição de senha, por favor, desconcidere este email.')
+            ->markdown('Notification::notifications.email');
     }
 
     /**

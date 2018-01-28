@@ -5,6 +5,7 @@ namespace Modules\Backend\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Password;
+use Modules\Backend\Http\Middleware\DisablePreventBack;
 
 class AdminForgotPasswordController extends Controller
 {
@@ -14,11 +15,11 @@ class AdminForgotPasswordController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param DisablePreventBack $disablePreventBack
      */
-    public function __construct()
+    public function __construct(DisablePreventBack $disablePreventBack)
     {
-        $this->middleware('guest:admin');
+        $this->middleware($disablePreventBack);
     }
 
     /**

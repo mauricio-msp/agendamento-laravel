@@ -6,6 +6,7 @@ body {
     font-weight: 300;
     font-size: 1em;
     color: #fff;
+    letter-spacing: 1px;
 }
 body {
     background: #2e3441;
@@ -97,7 +98,7 @@ body {
     height: 40px;
     padding: 10px 12px;
     margin-bottom: 10px;
-    background-color: #538a9a;
+    background-color: #607D8B;
     text-transform: uppercase;
     color: #fff;
     border: 0px;
@@ -107,12 +108,13 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .signin input[type="submit"]:hover {
-    background-color: #5e98a8;
+    background-color: #546E7A;
 }
 .signin input[type="submit"]:active {
-    background-color: #4a7b89;
+    background-color: #546E7A;
 }
 input[type="checkbox"] {
     display: none;
@@ -176,6 +178,20 @@ input[type="checkbox"]:checked + label:after {
 }
 .cf {
     *zoom: 1;
+}
+a{
+    color: #ccc;
+}
+a:link {
+    text-decoration: none;
+    color: #ccc;
+}
+a:hover{
+    text-decoration: none;
+    color: #90A4AE;
+}
+.text-login{
+    text-align: center;
 }
 
 

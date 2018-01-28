@@ -3,17 +3,18 @@
 namespace Modules\Backend\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Modules\Backend\Http\Middleware\DisablePreventBack;
 
 class BackendController extends Controller
 {
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param DisablePreventBack $disablePreventBack
      */
-    public function __construct()
+    public function __construct(DisablePreventBack $disablePreventBack)
     {
-        $this->middleware('auth:admin');
+        $this->middleware($disablePreventBack);
     }
 
     /**
