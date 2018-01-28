@@ -3,18 +3,25 @@
 @section('content')
     <div class="signin cf">
         <div class="avatar"></div>
-        <form>
+        <form method="post" action="{{ route('admin.login.submit') }}">
             <div class="inputrow">
-                <input type="text" id="name" placeholder="Username"/>
+                <input name="email" type="text" id="name" placeholder="{{trans('backend::auth.email')}}"/>
                 <label class="ion-person" for="name"></label>
             </div>
             <div class="inputrow">
-                <input type="password" id="pass" placeholder="Password"/>
+                <input name="password" type="password" id="pass" placeholder="{{trans('backend::auth.password')}}"/>
                 <label class="ion-locked" for="pass"></label>
             </div>
-            <input type="checkbox" name="remember" id="remember"/>
-            <label class="radio" for="remember">Stay Logged In</label>
-            <input type="submit" value="Login"/>
+            <p>
+                <input class="btn-block" type="submit" value="{{trans('backend::auth.login')}}"/>
+            </p>
+            <br><br>
+            <p class="text-login">
+
+                <a href="{{ route('admin.password.request') }}">
+                   {{trans('backend::auth.forgot_password')}}
+                </a>
+            </p>
         </form>
     </div>
 @stop
