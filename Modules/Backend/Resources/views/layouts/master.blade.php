@@ -10,6 +10,8 @@
         <link rel="icon" href="{{url('assets/images/favicon.ico')}}">
         <!-- Bootstrap core CSS -->
         <link href="{{url('assets/css/app.css')}}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet" type="text/css"/>
+        <link href="https://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body>
