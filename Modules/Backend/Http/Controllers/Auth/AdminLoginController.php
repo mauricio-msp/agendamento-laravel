@@ -6,12 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\SessionGuard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Modules\Backend\Http\Middleware\DisablePreventBack;
 
 class AdminLoginController extends Controller
 {
-    public function __construct()
+    /**
+     * AdminLoginController constructor.
+     * @param DisablePreventBack $disablePreventBack
+     */
+    public function __construct(DisablePreventBack $disablePreventBack)
     {
-        $this->middleware('guest:admin');
+        $this->middleware($disablePreventBack);
     }
 
     public function showLoginForm()
@@ -49,7 +54,7 @@ class AdminLoginController extends Controller
      */
     public function logout(Request $request)
     {
-        \Auth::guard('admin')->logout();
+        Auth::guard('admin')->logout();
         return redirect()->route('admin.login');
     }
 }

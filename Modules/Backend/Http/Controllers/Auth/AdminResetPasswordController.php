@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
+use Modules\Backend\Http\Middleware\DisablePreventBack;
 
 class AdminResetPasswordController extends Controller
 {
@@ -23,11 +24,11 @@ class AdminResetPasswordController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param DisablePreventBack $disablePreventBack
      */
-    public function __construct()
+    public function __construct(DisablePreventBack $disablePreventBack)
     {
-        $this->middleware('guest:admin');
+        $this->middleware($disablePreventBack);
     }
 
     /**

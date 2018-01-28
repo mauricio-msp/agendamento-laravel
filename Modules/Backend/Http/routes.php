@@ -1,7 +1,7 @@
 <?php
 
-
-Route::group(['middleware' => 'guest:admin', 'prefix' => 'backend', 'namespace' => 'Modules\Backend\Http\Controllers'], function () {
+Route::group(['middleware' => 'disablepreventback', 'prefix' => 'backend', 'namespace' => 'Modules\Backend\Http\Controllers'], function () {
+    Auth::routes();
     Route::get('/admin', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/admin', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'BackendController@index')->name('admin.backend');
